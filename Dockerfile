@@ -9,7 +9,7 @@ RUN apk add --no-cache git maven
 RUN git clone -b $GIT_BRANCH $GIT_REPO_URL /photon
 RUN cd /photon/ && mvn package -Dmaven.test.skip=true
 
-COPY ./start.sh ./photon/target/start.sh
+COPY ./start.sh /photon/target/start.sh
 
 WORKDIR /photon/target/
 

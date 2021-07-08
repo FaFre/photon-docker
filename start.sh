@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -d "./photon_data" ] 
+if [ -d "/usr/share/photon_data/elasticsearch" ] 
 then
-    java -jar ./photon-*.jar $PHOTON_RUN_PARAMS
+    java -jar ./photon-*.jar -data-dir /usr/share/photon_data/ $PHOTON_RUN_PARAMS
 else
-    java -jar ./photon-*.jar $PHOTON_INIT_PARAMS
-    echo "Photon initialized!"
+    java -jar ./photon-*.jar -nominatim-import -data-dir /usr/share/photon_data/ $PHOTON_INIT_PARAMS
+    java -jar ./photon-*.jar -data-dir /usr/share/photon_data/ $PHOTON_RUN_PARAMS
 fi
