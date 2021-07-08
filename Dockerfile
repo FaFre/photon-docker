@@ -11,7 +11,6 @@ RUN cd /photon/ && mvn package -Dmaven.test.skip=true
 RUN mv /photon/target/photon-*.jar /
 
 RUN cd / && rm -rf /photon
-RUN apk del git maven
 
 COPY ./start.sh /start.sh
 
